@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #161616;
+}
+
+.coin {
+    display: flex;
+    width: 28.75rem;
+    height: 6.25rem;
+    border-radius: 0.5rem;
+    background: #202022;
+}
+
+.coin .coin-logo {
+    width: 6.25rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.coin .coin-logo img {
+    width: 70%;
+    height: 70%;
+}
+
+.coin .coin-name {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.coin .coin-name h3 {
+    color: #fff;
+    font-size: 1.75rem;
+    text-transform: capitalize;
+}
+
+.coin .coin-price {
+    display: grid;
+    align-items: center;
+    margin-left: auto;
+    padding: 0.2rem 1.375rem 0 0;
+    text-align: right;
+}
+
+.coin .coin-price .price {
+    font-size: 1.625rem;
+    font-weight: 1000;
+    color: #fff;
+}
+
+.coin .coin-price .change {
+    color: #aaa;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-top: -2rem;
+}
+
+.coin.rising {
+    background: linear-gradient(to right, #202022, #4eb64510);
+}
+
+.coin.rising .coin-price .change {
+    color: #30ff20;
+}
+
+.coin.falling {
+    background: linear-gradient(90deg, #202022, #aa444425);
+}
+
+.coin.falling .coin-price .change {
+    color: #ff4040;
+}
+
+.main-container {
+    position: absolute;
+    top: 15%;
+}
+
+h1 {
+    position: absolute;
+    top: 3%;
+    font-size: 4rem;
+    color: rgba(227, 192, 18, 0.579);
+}
+
+.coin:hover {
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.8);
+}
