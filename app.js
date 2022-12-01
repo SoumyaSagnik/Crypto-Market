@@ -6,7 +6,7 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cte
         for (let coin of coins) {
             const coinInfo = json[`${coin}`];
             const price = coinInfo.usd;
-            const change = coinInfo.usd_24h_change.toFixed(5);
+            const change = coinInfo.usd_24h_change.toFixed(2);
 
             container.innerHTML += `
                 <div class="coin ${change < 0 ? 'falling' : 'rising'}">
@@ -18,7 +18,7 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cte
                     </div>
                     <div class="coin-price">
                         <span class="price">$${price}</span>
-                        <span class="change">${change}</span>
+                        <span class="change">${change}%</span>
                     </div>
                 </div>
                 <br>
