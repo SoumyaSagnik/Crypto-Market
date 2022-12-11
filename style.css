@@ -14,7 +14,7 @@ body {
 
 .coin {
     display: flex;
-    width: 28.75rem;
+    width: 25rem;
     height: 6.25rem;
     border-radius: 0.5rem;
     background: #202022;
