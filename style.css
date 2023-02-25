@@ -97,6 +97,7 @@ body {
 h1 {
     font-size: 3rem;
     color: rgba(215, 194, 183, 0.579);
+    margin-top: 1%;
 }
 
 .coin:hover {
