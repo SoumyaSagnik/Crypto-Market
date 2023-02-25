@@ -1,15 +1,17 @@
-fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ctether%2Cdogecoin%2Ccardano%2Clitecoin%2Ctron%2Cfilecoin%2Cbinancecoin%2Csolana%2Cpolkadot%2Cdash&vs_currencies=usd&include_24hr_change=true')
-    .then(res => res.json())
-    .then(json => {
-        const container = document.querySelector('.container');
-        const coins = Object.getOwnPropertyNames(json);
-        for (let coin of coins) {
-            const coinInfo = json[`${coin}`];
-            const price = coinInfo.usd;
-            const change = coinInfo.usd_24h_change.toFixed(2);
+fetch(
+  "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ctether%2Cdogecoin%2Ccardano%2Clitecoin%2Ctron%2Cfilecoin%2Cbinancecoin%2Csolana%2Cpolkadot%2Cdash&vs_currencies=usd&include_24hr_change=true"
+)
+  .then((res) => res.json())
+  .then((json) => {
+    const container = document.querySelector(".container");
+    const coins = Object.getOwnPropertyNames(json);
+    for (let coin of coins) {
+      const coinInfo = json[`${coin}`];
+      const price = coinInfo.usd;
+      const change = coinInfo.usd_24h_change.toFixed(2);
 
-            container.innerHTML += `
-                <div class="coin ${change < 0 ? 'falling' : 'rising'}">
+      container.innerHTML += `
+                <div class="coin ${change < 0 ? "falling" : "rising"}">
                     <div class="coin-logo">
                         <img src="images/${coin}.png">
                     </div>
@@ -21,7 +23,6 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cte
                         <span class="change">${change}%</span>
                     </div>
                 </div>
-                <br>
         `;
-        }
-    })
+    }
+  });
