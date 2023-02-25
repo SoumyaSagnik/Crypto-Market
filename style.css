@@ -177,3 +177,23 @@ h1 {
         font-size: 2.25rem;
     }
 }
+
+::-webkit-scrollbar {
+    width: .3rem;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 100vw;
+    margin-block: .1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: burlywood;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(219, 166, 96);
+    border-radius: 2rem;
+}
